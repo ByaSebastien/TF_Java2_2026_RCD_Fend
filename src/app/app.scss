@@ -1,15 +1,11 @@
+
+
 :host {
   display: flex;
   flex-direction: column;
 
-  header {
-    background-color: darkcyan;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
-
   main {
     padding: 1rem;
+    min-height: 85vh;
   }
 }
