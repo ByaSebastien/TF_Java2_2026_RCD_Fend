@@ -1,0 +1,8 @@
+@if (page()) {
+
+  @for (p of page()!.content; track p.id) {
+    <p>{{p.name}}</p>
+  } @empty {
+    <p>Pas de produits</p>
+  }
+}
