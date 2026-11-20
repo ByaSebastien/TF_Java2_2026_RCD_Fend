@@ -1,0 +1,14 @@
+ul{
+  list-style: none;
+  display: flex;
+  background-color: var(--base-dark);
+  justify-content: center;
+}
+li{
+  padding: 0.5rem;
+  color: white;
+}
+li:hover
+{
+  background-color:var(--hover-color);
+}

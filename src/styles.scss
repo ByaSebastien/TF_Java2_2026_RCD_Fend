@@ -74,4 +74,19 @@ a {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+:root{
+  --main-color: #425dff;
+  --second-color: #ffb880;
+  --accent-color: #f0f0f0;
+
+  --base-color: #d4e9fb;
+  --base-text-color: #303030;
+
+  --base-color2: #ffcebc;
+  --base-text-color2: #303030;
+
+  --base-dark:#303030;
+  --base-dark-text-color: #f0f0f0;
+
+  --hover-color: #7bc1ff
 }
