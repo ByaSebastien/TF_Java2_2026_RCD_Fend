@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('TF_Java_2026_RCD_Fend');
+  protected readonly title = signal('TF_Java2_2026_RCD_Fend');
 }

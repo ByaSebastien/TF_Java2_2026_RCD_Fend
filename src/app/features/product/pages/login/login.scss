@@ -1,0 +1,126 @@
+
+.login-page {
+  display: flex;
+  min-height: calc(100vh - 100px);
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  background-color: darkcyan;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 0.5rem;
+    color: #f5f0f8;
+    font-size: 1.875rem;
+    font-weight: 700;
+  }
+
+  p {
+    color: #9ca3af;
+    font-size: 0.875rem;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 0.5rem;
+    color: #f5f0f8;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    outline: none;
+    background-color: #10101c;
+    color: #f5f0f8;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: #9ca3af;
+    }
+
+    &:focus {
+      border-color: #darkcyan;
+    }
+  }
+}
+
+.error-text {
+  margin-top: 0.25rem;
+  color: #f87171;
+  font-size: 0.875rem;
+}
+
+.error-message {
+  padding: 0.75rem;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 0.5rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  font-size: 0.875rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #darkcyan;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s, opacity 0.2s;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.1);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.register-link {
+  margin-top: 1.5rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  text-align: center;
+
+  a {
+    margin-left: 0.25rem;
+    color: whitesmoke;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

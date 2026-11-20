@@ -1,0 +1,74 @@
+
+<div class="login-page">
+
+  <div class="login-card">
+
+    <div class="login-header">
+      <h1>Bienvenue !</h1>
+      <p>Connecte-toi à ton compte</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="email">Email</label>
+
+        <input
+          id="email"
+          type="text"
+          formControlName="email"
+          autocomplete="email"
+          placeholder="Ton email"
+        />
+
+        @if (loginForm.controls.email.touched && loginForm.controls.email.invalid) {
+          <p class="error-text">
+            L'email est obligatoire.
+          </p>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          autocomplete="current-password"
+          placeholder="Ton mot de passe"
+        />
+
+        @if (loginForm.controls.password.touched && loginForm.controls.password.invalid) {
+          <p class="error-text">
+            Le mot de passe est obligatoire.
+          </p>
+        }
+      </div>
+
+      @if (errorMessage()) {
+        <div class="error-message">
+          {{ errorMessage() }}
+        </div>
+      }
+
+      <button
+        type="submit"
+        [disabled]="loading()"
+      >
+        {{ loading() ? 'Connexion en cours...' : 'Se connecter' }}
+      </button>
+
+    </form>
+
+    <div class="register-link">
+      Tu n'as pas encore de compte ?
+
+      <a routerLink="/register">
+        Inscris-toi
+      </a>
+    </div>
+
+  </div>
+
+</div>
