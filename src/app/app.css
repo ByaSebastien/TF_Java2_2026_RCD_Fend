@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-direction: column; }
+  :host header {
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+    padding: 1rem; }
+  :host main {
+    padding: 1rem; }
+
+/*# sourceMappingURL=app.css.map */
