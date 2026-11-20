@@ -13,7 +13,7 @@ import {
 import { Router, RouterLink } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { AuthService } from '../services/auth.service';
-import { RegisterFormData } from './register.model';
+import { RegisterFormData, RegisterRequest } from './register.model';
 
 @Component({
   selector: 'app-register',
@@ -48,7 +48,8 @@ export class Register {
     await submit(this.registerForm, async () => {
       const { email, password } = this.registerForm().value();
       try {
-        await firstValueFrom(this.authService.register({ email: email.trim(), password }));
+        const request: RegisterRequest = { email: email.trim(), password };
+        await firstValueFrom(this.authService.register(request));
         await this.router.navigate(['/']);
       } catch (err) {
         this.error.set(errorMessage(err));
