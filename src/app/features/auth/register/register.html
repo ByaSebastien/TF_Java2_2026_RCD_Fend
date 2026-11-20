@@ -1,0 +1,65 @@
+<main class="register">
+  <form class="card" (submit)="onSubmit($event)" novalidate>
+    <h1>Créer un compte</h1>
+    <p class="subtitle">Tous les champs sont obligatoires.</p>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        autocomplete="email"
+        [formField]="registerForm.email"
+        [attr.aria-invalid]="registerForm.email().touched() && registerForm.email().invalid()"
+        aria-describedby="email-error"
+      />
+      @if (registerForm.email().touched() && registerForm.email().invalid()) {
+        <small id="email-error">{{ registerForm.email().errors()[0].message }}</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="password">Mot de passe</label>
+      <input
+        id="password"
+        type="password"
+        autocomplete="new-password"
+        [formField]="registerForm.password"
+        [attr.aria-invalid]="registerForm.password().touched() && registerForm.password().invalid()"
+        aria-describedby="password-error"
+      />
+      @if (registerForm.password().touched() && registerForm.password().invalid()) {
+        <small id="password-error">{{ registerForm.password().errors()[0].message }}</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="confirmPassword">Confirmer le mot de passe</label>
+      <input
+        id="confirmPassword"
+        type="password"
+        autocomplete="new-password"
+        [formField]="registerForm.confirmPassword"
+        [attr.aria-invalid]="
+          registerForm.confirmPassword().touched() && registerForm.confirmPassword().invalid()
+        "
+        aria-describedby="confirmPassword-error"
+      />
+      @if (registerForm.confirmPassword().touched() && registerForm.confirmPassword().invalid()) {
+        <small id="confirmPassword-error">
+          {{ registerForm.confirmPassword().errors()[0].message }}
+        </small>
+      }
+    </div>
+
+    @if (error()) {
+      <p class="alert" role="alert">{{ error() }}</p>
+    }
+
+    <button class="submit" type="submit" [disabled]="registerForm().submitting()">
+      {{ registerForm().submitting() ? 'Création...' : 'Créer mon compte' }}
+    </button>
+
+    <p class="switch">Déjà un compte ? <a routerLink="/login">Se connecter</a></p>
+  </form>
+</main>
