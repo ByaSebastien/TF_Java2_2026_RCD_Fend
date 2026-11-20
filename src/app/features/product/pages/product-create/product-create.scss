@@ -1,0 +1,16 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+p[role='alert'] {
+  color: #b00020;
+  margin: 0.25rem 0 0;
+}
