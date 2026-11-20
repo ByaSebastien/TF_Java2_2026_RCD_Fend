@@ -22,9 +22,9 @@ export class AuthService {
   }
 
   constructor() {
-    const savedUser = sessionStorage.getItem('user');
-    const savedAccessToken = sessionStorage.getItem('accessToken');
-    const savedRefreshToken = sessionStorage.getItem('refreshToken');
+    const savedUser = localStorage.getItem('user');
+    const savedAccessToken = localStorage.getItem('accessToken');
+    const savedRefreshToken = localStorage.getItem('refreshToken');
 
     if (savedUser && savedAccessToken && savedRefreshToken) {
       try {
@@ -62,14 +62,14 @@ export class AuthService {
   }
 
   private setSession(response: UserTokenResponse): void {
-    this.user.set(response.email);
-
+    this.user.set(response.user);
+    console.log("In");
     this.accessToken = response.accessToken;
     this.refreshToken = response.refreshToken;
 
-    sessionStorage.setItem('user', JSON.stringify(response.email));
-    sessionStorage.setItem('accessToken', response.accessToken);
-    sessionStorage.setItem('refreshToken', response.refreshToken);
+    localStorage.setItem('user', JSON.stringify(response.user));
+    localStorage.setItem('accessToken', response.accessToken);
+    localStorage.setItem('refreshToken', response.refreshToken);
   }
 
   clearSession(): void {
@@ -78,8 +78,8 @@ export class AuthService {
     this.accessToken = null;
     this.refreshToken = null;
 
-    sessionStorage.removeItem('user');
-    sessionStorage.removeItem('accessToken');
-    sessionStorage.removeItem('refreshToken');
+    localStorage.removeItem('user');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
   }
 }

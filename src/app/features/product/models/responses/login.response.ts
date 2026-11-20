@@ -5,7 +5,7 @@ export interface UserResponse {
 }
 
 export interface UserTokenResponse {
-  email: UserResponse;
+  user: UserResponse;
   accessToken: string;
   refreshToken: string;
 }
