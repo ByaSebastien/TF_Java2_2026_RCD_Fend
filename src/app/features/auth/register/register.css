@@ -1,0 +1,118 @@
+:host {
+  --primary: #1d4ed8;
+  --primary-hover: #1e40af;
+  --danger: #b91c1c;
+  --text: #111827;
+  --muted: #4b5563;
+  --border: #6b7280;
+
+  display: block;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Arial,
+    sans-serif;
+  color: var(--text);
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 10%);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: -0.75rem 0 0.5rem;
+  color: var(--muted);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font: inherit;
+}
+
+input[aria-invalid='true'] {
+  border-color: var(--danger);
+}
+
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+small {
+  font-size: 0.875rem;
+  color: var(--danger);
+}
+
+.alert {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--danger);
+  background: #fef2f2;
+  color: var(--danger);
+}
+
+.submit {
+  padding: 0.75rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.switch {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.switch a {
+  color: var(--primary);
+  font-weight: 600;
+}
