@@ -21,6 +21,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/product/pages/product-create/product-create').then((m) => m.ProductCreate),
   },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./features/product/pages/login/login').then((m) => m.Login),
+  },
 ];
 
 

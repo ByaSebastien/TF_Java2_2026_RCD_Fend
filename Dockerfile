@@ -12,7 +12,7 @@ RUN npm run build --prod
 
 FROM nginx:alpine
 
-COPY --from=build /app/dist/TF_Java_2026_RCD_Fend/browser /usr/share/nginx/html
+COPY --from=build /app/dist/TF_Java_2026_RCD_Fend /usr/share/nginx/html
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
